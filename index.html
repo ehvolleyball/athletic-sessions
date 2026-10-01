@@ -4,63 +4,352 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EHVB | Home</title>
+
 <style>
-* { box-sizing: border-box; }
-body { margin: 0; background: #f4f5f7; color: #20232b; font-family: Arial, sans-serif; }
-main { max-width: 1200px; margin: auto; padding: 48px 28px; }
-header { text-align: center; margin-bottom: 42px; }
-h1 { margin: 0 0 18px; font-size: clamp(32px, 5vw, 52px); }
-header p { max-width: 800px; margin: auto; font-size: 19px; line-height: 1.7; }
-.hub { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, .9fr); gap: 32px; align-items: start; }
-.flyer { margin: 0; }
-.flyer img { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px #0002; }
-.session { display: flex; justify-content: center; padding-top: 36px; }
-.session-link { display: inline-flex; align-items: center; gap: 12px; padding: 18px 22px; background: white; border: 2px solid #d71920; border-radius: 40px; color: #20232b; text-decoration: none; font-size: 18px; font-weight: bold; box-shadow: 0 4px 16px #0001; }
-.radio-circle { width: 22px; height: 22px; border: 2px solid #d71920; border-radius: 50%; flex-shrink: 0; }
-.session-link:hover { background: #fff0f0; }
-.social-icon:focus-visible, .session-link:focus-visible { outline: 3px solid #20232b; outline-offset: 5px; }
-.socials { padding-top: 36px; }
-.social-icons { display: flex; justify-content: center; gap: 22px; align-items: center; }
-.social-icon { display: flex; flex-direction: column; align-items: center; gap: 9px; font-size: 13px; color: inherit; text-decoration: none; }
-.social-icon svg { width: 44px; height: 44px; }
-.socials p { text-align: center; font-size: 13px; color: #626975; line-height: 1.5; }
-@media (max-width: 800px) { .hub { grid-template-columns: 1fr 1fr; } .flyer { grid-column: 1 / -1; max-width: 500px; width: 100%; justify-self: center; } .session, .socials { padding-top: 8px; } }
-@media (max-width: 500px) { main { padding: 32px 18px; } .hub { grid-template-columns: 1fr; } .flyer { grid-column: auto; } header p { font-size: 17px; } }
+* { 
+  box-sizing: border-box; 
+}
+
+body { 
+  margin: 0; 
+  background: #f4f5f7; 
+  color: #20232b; 
+  font-family: Arial, sans-serif; 
+}
+
+main { 
+  max-width: 1200px; 
+  margin: auto; 
+  padding: 48px 28px; 
+}
+
+header { 
+  text-align: center; 
+  margin-bottom: 42px; 
+}
+
+h1 { 
+  margin: 0 0 18px; 
+  font-size: clamp(32px, 5vw, 52px); 
+}
+
+header p { 
+  max-width: 800px; 
+  margin: auto; 
+  font-size: 19px; 
+  line-height: 1.7; 
+}
+
+.hub { 
+  display: grid; 
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, .9fr); 
+  gap: 32px; 
+  align-items: start; 
+}
+
+/* EVENT FLYER */
+
+.flyer { 
+  margin: 0; 
+}
+
+.flyer img { 
+  display: block; 
+  width: 100%; 
+  height: auto; 
+  border-radius: 12px; 
+  box-shadow: 0 8px 24px #0002; 
+}
+
+/* REQUEST A SESSION */
+
+.session { 
+  text-align: center;
+}
+
+.session h2 {
+  margin: 0 0 18px;
+  font-size: 26px;
+}
+
+.session-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  border-radius: 12px;
+}
+
+.session-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px #0002;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.session-link:hover .session-image {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px #0003;
+}
+
+.session-link:focus-visible {
+  outline: 3px solid #20232b;
+  outline-offset: 5px;
+}
+
+/* SOCIAL MEDIA */
+
+.socials { 
+  padding-top: 36px; 
+}
+
+.social-icons { 
+  display: flex; 
+  justify-content: center; 
+  gap: 22px; 
+  align-items: center; 
+}
+
+.social-icon { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 9px; 
+  font-size: 13px; 
+  color: inherit; 
+  text-decoration: none; 
+}
+
+.social-icon svg { 
+  width: 44px; 
+  height: 44px; 
+}
+
+.social-icon:focus-visible { 
+  outline: 3px solid #20232b; 
+  outline-offset: 5px; 
+}
+
+.socials p { 
+  text-align: center; 
+  font-size: 13px; 
+  color: #626975; 
+  line-height: 1.5; 
+}
+
+/* TABLET */
+
+@media (max-width: 800px) { 
+  .hub { 
+    grid-template-columns: 1fr 1fr; 
+  } 
+  
+  .flyer { 
+    grid-column: 1 / -1; 
+    max-width: 500px; 
+    width: 100%; 
+    justify-self: center; 
+  } 
+  
+  .session, 
+  .socials { 
+    padding-top: 8px; 
+  } 
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) { 
+  main { 
+    padding: 32px 18px; 
+  } 
+  
+  .hub { 
+    grid-template-columns: 1fr; 
+  } 
+  
+  .flyer { 
+    grid-column: auto; 
+  } 
+  
+  header p { 
+    font-size: 17px; 
+  }
+
+  .session h2 {
+    font-size: 24px;
+  }
+}
+
 </style>
 </head>
+
 <body>
+
 <main>
+
   <header>
     <h1>Hi! Welcome to EHVB!</h1>
     <p>This site is a central hub for all information shared for parents and athletes to use.</p>
   </header>
+
   <section class="hub" aria-label="EHVB information and session requests">
+
+    <!-- EVENT FLYER -->
+
     <figure class="flyer">
-      <img src="oct10.jpg" alt="EHVB volleyball event October 10th, 1–3 PM at Order on the Court, CT 3. Cost $20. Come try to ace, dig, or get a kill on coach.">
+      <img 
+        src="oct10.jpg" 
+        alt="EHVB volleyball event October 10th, 1–3 PM at Order on the Court, CT 3. Cost $20. Come try to ace, dig, or get a kill on coach."
+      >
     </figure>
+
+
+    <!-- REQUEST A SESSION -->
+
     <div class="session">
-      <a class="session-link" href="session-request.html"><span class="radio-circle" aria-hidden="true"></span>Request a Session</a>
+
+      <h2>Request a Session</h2>
+
+      <a 
+        class="session-link" 
+        href="session-request.html"
+        aria-label="Request a volleyball training session"
+      >
+        <img 
+          class="session-image"
+          src="session.jpg"
+          alt="EHVB volleyball training session"
+        >
+      </a>
+
     </div>
+
+
+    <!-- SOCIAL MEDIA -->
+
     <div class="socials">
 
       <div class="social-icons">
-        <a class="social-icon" href="https://www.youtube.com/@EHVolleyball" target="_blank" rel="noopener noreferrer">
-          <svg role="img" aria-label="YouTube" viewBox="0 0 48 48"><rect x="2" y="9" width="44" height="30" rx="9" fill="#ff0000"/><path d="M20 17 L33 24 L20 31Z" fill="white"/></svg>
+
+        <!-- YOUTUBE -->
+
+        <a 
+          class="social-icon" 
+          href="https://www.youtube.com/@EHVolleyball" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+
+          <svg role="img" aria-label="YouTube" viewBox="0 0 48 48">
+            <rect x="2" y="9" width="44" height="30" rx="9" fill="#ff0000"/>
+            <path d="M20 17 L33 24 L20 31Z" fill="white"/>
+          </svg>
+
           <span>YouTube</span>
+
         </a>
-        <a class="social-icon" href="https://www.instagram.com/eh.volleyball?stkn=c3c2ZzZyNWQ5dzE0&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">
-          <svg role="img" aria-label="Instagram" viewBox="0 0 48 48"><defs><linearGradient id="instagram" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffcc55"/><stop offset=".45" stop-color="#ef285d"/><stop offset="1" stop-color="#7843d5"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#instagram)"/><rect x="10" y="10" width="28" height="28" rx="8" fill="none" stroke="white" stroke-width="3"/><circle cx="24" cy="24" r="7" fill="none" stroke="white" stroke-width="3"/><circle cx="33" cy="15" r="2" fill="white"/></svg>
+
+
+        <!-- INSTAGRAM -->
+
+        <a 
+          class="social-icon" 
+          href="https://www.instagram.com/eh.volleyball?stkn=c3c2ZzZyNWQ5dzE0&amp;utm_source=qr" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+
+          <svg role="img" aria-label="Instagram" viewBox="0 0 48 48">
+
+            <defs>
+              <linearGradient id="instagram" x1="0" y1="1" x2="1" y2="0">
+                <stop stop-color="#ffcc55"/>
+                <stop offset=".45" stop-color="#ef285d"/>
+                <stop offset="1" stop-color="#7843d5"/>
+              </linearGradient>
+            </defs>
+
+            <rect width="48" height="48" rx="13" fill="url(#instagram)"/>
+
+            <rect 
+              x="10" 
+              y="10" 
+              width="28" 
+              height="28" 
+              rx="8" 
+              fill="none" 
+              stroke="white" 
+              stroke-width="3"
+            />
+
+            <circle 
+              cx="24" 
+              cy="24" 
+              r="7" 
+              fill="none" 
+              stroke="white" 
+              stroke-width="3"
+            />
+
+            <circle 
+              cx="33" 
+              cy="15" 
+              r="2" 
+              fill="white"
+            />
+
+          </svg>
+
           <span>Instagram</span>
+
         </a>
-        <a class="social-icon" href="https://www.tiktok.com/@ehvolleyball?_r=1&amp;_t=ZP-9ACexFUm37X" target="_blank" rel="noopener noreferrer">
-          <svg role="img" aria-label="TikTok" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#111"/><path d="M28 10v23a8 8 0 1 1-7-8v5a3 3 0 1 0 2 3V10h5c1 6 4 8 9 8v5c-4 0-7-1-9-3" fill="#25f4ee" transform="translate(-1 1)"/><path d="M28 10v23a8 8 0 1 1-7-8v5a3 3 0 1 0 2 3V10h5c1 6 4 8 9 8v5c-4 0-7-1-9-3" fill="#fe2c55" transform="translate(1 0)"/><path d="M28 10v23a8 8 0 1 1-7-8v5a3 3 0 1 0 2 3V10h5c1 6 4 8 9 8v5c-4 0-7-1-9-3" fill="white"/></svg>
+
+
+        <!-- TIKTOK -->
+
+        <a 
+          class="social-icon" 
+          href="https://www.tiktok.com/@ehvolleyball?_r=1&amp;_t=ZP-9ACexFUm37X" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+
+          <svg role="img" aria-label="TikTok" viewBox="0 0 48 48">
+
+            <rect width="48" height="48" rx="12" fill="#111"/>
+
+            <path 
+              d="M28 10v23a8 8 0 1 1-7-8v5a3 3 0 1 0 2 3V10h5c1 6 4 8 9 8v5c-4 0-7-1-9-3" 
+              fill="#25f4ee" 
+              transform="translate(-1 1)"
+            />
+
+            <path 
+              d="M28 10v23a8 8 0 1 1-7-8v5a3 3 0 1 0 2 3V10h5c1 6 4 8 9 8v5c-4 0-7-1-9-3" 
+              fill="#fe2c55" 
+              transform="translate(1 0)"
+            />
+
+            <path 
+              d="M28 10v23a8 8 0 1 1-7-8v5a3 3 0 1 0 2 3V10h5c1 6 4 8 9 8v5c-4 0-7-1-9-3" 
+              fill="white"
+            />
+
+          </svg>
+
           <span>TikTok</span>
+
         </a>
+
       </div>
 
     </div>
+
   </section>
+
 </main>
+
 </body>
 </html>
-
