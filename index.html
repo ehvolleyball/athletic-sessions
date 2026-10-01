@@ -1,41 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Athlete Session Request</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; color: #1e293b; background: #f1f5f9; }
-    main { max-width: 900px; margin: 32px auto; padding: 24px; }
-    header { text-align: center; background: white; padding: 28px; border-radius: 14px; margin-bottom: 20px; }
-    h1 { margin-top: 0; line-height: 1.2; }
-    p { line-height: 1.6; }
-    a { color: #174db0; overflow-wrap: anywhere; }
-    a:focus-visible { outline: 3px solid #e99e16; outline-offset: 4px; }
-    .form-container { background: white; border-radius: 14px; overflow: hidden; }
-    .flyer { margin: 24px 0 0; }
-    .flyer img { display: block; width: 100%; height: auto; border-radius: 14px; }
-    iframe { display: block; width: 100%; height: 950px; border: 0; }
-    @media (max-width: 600px) { main { margin: 12px auto; padding: 12px; } header { padding: 20px; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EHVB | Home</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f5f7; color: #20232b; font-family: Arial, sans-serif; }
+main { max-width: 1200px; margin: auto; padding: 48px 28px; }
+header { text-align: center; margin-bottom: 42px; }
+h1 { margin: 0 0 18px; font-size: clamp(32px, 5vw, 52px); }
+header p { max-width: 800px; margin: auto; font-size: 19px; line-height: 1.7; }
+.hub { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, .9fr); gap: 32px; align-items: start; }
+.flyer { margin: 0; }
+.flyer img { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px #0002; }
+.session { display: flex; justify-content: center; padding-top: 36px; }
+.session-link { display: inline-flex; align-items: center; gap: 12px; padding: 18px 22px; background: white; border: 2px solid #d71920; border-radius: 40px; color: #20232b; text-decoration: none; font-size: 18px; font-weight: bold; box-shadow: 0 4px 16px #0001; }
+.radio-circle { width: 22px; height: 22px; border: 2px solid #d71920; border-radius: 50%; flex-shrink: 0; }
+.session-link:hover { background: #fff0f0; }
+.session-link:focus-visible { outline: 3px solid #20232b; outline-offset: 5px; }
+.socials { padding-top: 36px; }
+.social-icons { display: flex; justify-content: center; gap: 22px; align-items: center; }
+.social-icon { display: flex; flex-direction: column; align-items: center; gap: 9px; font-size: 13px; }
+.social-icon svg { width: 44px; height: 44px; }
+.socials p { text-align: center; font-size: 13px; color: #626975; line-height: 1.5; }
+@media (max-width: 800px) { .hub { grid-template-columns: 1fr 1fr; } .flyer { grid-column: 1 / -1; max-width: 500px; width: 100%; justify-self: center; } .session, .socials { padding-top: 8px; } }
+@media (max-width: 500px) { main { padding: 32px 18px; } .hub { grid-template-columns: 1fr; } .flyer { grid-column: auto; } header p { font-size: 17px; } }
+</style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Athlete Session Request</h1>
-      <p>Complete the form below to submit your request. Your reservation will be confirmed separately.</p>
-    </header>
-    <section class="form-container" aria-label="Session request form">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6Mobpkp7_Lg79qszbm-qgFY744a4KnCTig9AA3qM-JaYonA/viewform?embedded=true" title="Athlete session request Google Form">Loading Google Form…</iframe>
-    </section>
+<main>
+  <header>
+    <h1>Hi! Welcome to EHVB!</h1>
+    <p>This site is a central hub for all information shared for parents and athletes to use.</p>
+  </header>
+  <section class="hub" aria-label="EHVB information and session requests">
     <figure class="flyer">
-      <img src="oct10.jpg" alt="EHVB volleyball event on October 10th, 1–3 PM at Order on the Court, CT 3. Cost: $20. Come try to ace, dig, or get a kill on coach." loading="lazy">
+      <img src="oct10.jpg" alt="EHVB volleyball event October 10th, 1–3 PM at Order on the Court, CT 3. Cost $20. Come try to ace, dig, or get a kill on coach.">
     </figure>
-  </main>
+    <div class="session">
+      <a class="session-link" href="session-request.html"><span class="radio-circle" aria-hidden="true"></span>Request a Session</a>
+    </div>
+    <div class="socials">
+      <!-- Add profile links around these icons when the social URLs are available. -->
+      <div class="social-icons">
+        <span class="social-icon">
+          <svg role="img" aria-label="YouTube" viewBox="0 0 48 48"><rect x="2" y="9" width="44" height="30" rx="9" fill="#ff0000"/><path d="M20 17 L33 24 L20 31Z" fill="white"/></svg>
+          <span>YouTube</span>
+        </span>
+        <span class="social-icon">
+          <svg role="img" aria-label="Instagram" viewBox="0 0 48 48"><defs><linearGradient id="instagram" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffcc55"/><stop offset=".45" stop-color="#ef285d"/><stop offset="1" stop-color="#7843d5"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#instagram)"/><rect x="10" y="10" width="28" height="28" rx="8" fill="none" stroke="white" stroke-width="3"/><circle cx="24" cy="24" r="7" fill="none" stroke="white" stroke-width="3"/><circle cx="33" cy="15" r="2" fill="white"/></svg>
+          <span>Instagram</span>
+        </span>
+        <span class="social-icon">
+          <svg role="img" aria-label="TikTok" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#111"/><path d="M28 10v23a8 8 0 1 1-7-8v5a3 3 0 1 0 2 3V10h5c1 6 4 8 9 8v5c-4 0-7-1-9-3" fill="#25f4ee" transform="translate(-1 1)"/><path d="M28 10v23a8 8 0 1 1-7-8v5a3 3 0 1 0 2 3V10h5c1 6 4 8 9 8v5c-4 0-7-1-9-3" fill="#fe2c55" transform="translate(1 0)"/><path d="M28 10v23a8 8 0 1 1-7-8v5a3 3 0 1 0 2 3V10h5c1 6 4 8 9 8v5c-4 0-7-1-9-3" fill="white"/></svg>
+          <span>TikTok</span>
+        </span>
+      </div>
+      <p>Social links coming soon.</p>
+    </div>
+  </section>
+</main>
 </body>
 </html>
-
-
-
-
