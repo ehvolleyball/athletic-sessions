@@ -1,38 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Session Request</title>
+
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; color: #1e293b; background: #f1f5f9; }
-    main { max-width: 900px; margin: 32px auto; padding: 24px; }
-    header { text-align: center; background: white; padding: 28px; border-radius: 14px; margin-bottom: 20px; }
-    h1 { margin-top: 0; line-height: 1.2; }
-    p { line-height: 1.6; }
-    a { color: #174db0; overflow-wrap: anywhere; }
-    a:focus-visible { outline: 3px solid #e99e16; outline-offset: 4px; }
-    .form-container { background: white; border-radius: 14px; overflow: hidden; }
-    iframe { display: block; width: 100%; height: 950px; border: 0; }
-    @media (max-width: 600px) { main { margin: 12px auto; padding: 12px; } header { padding: 20px; } }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #1e293b;
+      background: #f1f5f9;
+    }
+
+    main {
+      max-width: 1400px;
+      margin: 32px auto;
+      padding: 24px;
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+      margin-bottom: 18px;
+    }
+
+    a {
+      color: #174db0;
+      overflow-wrap: anywhere;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #e99e16;
+      outline-offset: 4px;
+    }
+
+
+    /* HEADER */
+
+    header {
+      text-align: center;
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin-top: 0;
+      line-height: 1.2;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+
+    /* THREE COLUMN LAYOUT */
+
+    .session-layout {
+      display: grid;
+      grid-template-columns: 230px minmax(500px, 1fr) 280px;
+      gap: 24px;
+      align-items: start;
+    }
+
+
+    /* SIDE CARDS */
+
+    .info-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px #0001;
+    }
+
+    .info-card h2 {
+      margin: 0;
+      padding: 18px 12px;
+      text-align: center;
+      background: #d71920;
+      color: white;
+      font-size: 22px;
+    }
+
+
+    /* SESSION RATES */
+
+    .rates {
+      padding: 8px 22px;
+    }
+
+    .rate {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 19px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .rate:last-child {
+      border-bottom: none;
+    }
+
+    .rate-name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .rate-price {
+      font-size: 22px;
+      font-weight: bold;
+      color: #d71920;
+    }
+
+
+    /* GOOGLE FORM */
+
+    .form-container {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px #0001;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 950px;
+      border: 0;
+    }
+
+
+    /* WHAT'S INCLUDED */
+
+    .benefits {
+      padding: 24px;
+    }
+
+    .benefit {
+      margin-bottom: 26px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .benefit:last-child {
+      margin-bottom: 0;
+    }
+
+    .benefit strong {
+      color: #d71920;
+      font-size: 18px;
+    }
+
+
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+
+      .session-layout {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .form-container {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      main {
+        margin: 12px auto;
+        padding: 12px;
+      }
+
+      header {
+        padding: 20px;
+      }
+
+      .session-layout {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .info-card,
+      .form-container {
+        width: 100%;
+      }
+
+      iframe {
+        height: 1100px;
+      }
+
+    }
+
   </style>
 </head>
+
+
 <body>
+
   <main>
-    <nav aria-label="Main navigation"><a href="index.html">← EHVB Home</a></nav>
+
+
+    <!-- HOME LINK -->
+
+    <nav aria-label="Main navigation">
+
+      <a href="index.html">
+        ← EHVB Home
+      </a>
+
+    </nav>
+
+
+    <!-- HEADER -->
+
     <header>
+
       <h1>Session Request</h1>
-      <p>Complete the form below to submit your request. Your reservation will be confirmed separately.</p>
+
+      <p>
+        Complete the form below to submit your request.
+        Your reservation will be confirmed separately.
+      </p>
+
     </header>
-    <section class="form-container" aria-label="Session request form">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6Mobpkp7_Lg79qszbm-qgFY744a4KnCTig9AA3qM-JaYonA/viewform?embedded=true" title="Athlete session request Google Form">Loading Google Form…</iframe>
+
+
+    <!-- SESSION AREA -->
+
+    <section class="session-layout">
+
+
+      <!-- LEFT: SESSION RATES -->
+
+      <aside class="info-card">
+
+        <h2>Session Rates</h2>
+
+        <div class="rates">
+
+          <div class="rate">
+            <span class="rate-name">1:1</span>
+            <span class="rate-price">$80</span>
+          </div>
+
+          <div class="rate">
+            <span class="rate-name">2:1</span>
+            <span class="rate-price">$50</span>
+          </div>
+
+          <div class="rate">
+            <span class="rate-name">3:1</span>
+            <span class="rate-price">$40</span>
+          </div>
+
+          <div class="rate">
+            <span class="rate-name">4:1</span>
+            <span class="rate-price">$30</span>
+          </div>
+
+        </div>
+
+      </aside>
+
+
+      <!-- CENTER: GOOGLE FORM -->
+
+      <section
+        class="form-container"
+        aria-label="Session request form"
+      >
+
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSe6Mobpkp7_Lg79qszbm-qgFY744a4KnCTig9AA3qM-JaYonA/viewform?embedded=true"
+          title="Athlete session request Google Form"
+        >
+          Loading Google Form…
+        </iframe>
+
+      </section>
+
+
+      <!-- RIGHT: WHAT'S INCLUDED -->
+
+      <aside class="info-card">
+
+        <h2>What's Included</h2>
+
+        <div class="benefits">
+
+          <div class="benefit">
+
+            <strong>1:1 &amp; 2:1 Sessions</strong>
+
+            <br><br>
+
+            Get 1 video with breakdowns of what was learned that day.
+
+          </div>
+
+          <div class="benefit">
+
+            <strong>All Sessions</strong>
+
+            <br><br>
+
+            Home drills are provided for all sessions.
+
+          </div>
+
+        </div>
+
+      </aside>
+
+
     </section>
-</main>
+
+
+  </main>
+
 </body>
+
 </html>
-
-
-
-
-
