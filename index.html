@@ -56,7 +56,7 @@ main {
 }
 
 
-/* COLUMN HEADINGS */
+/* SECTION HEADINGS */
 
 .section-title {
   margin: 0 0 18px;
@@ -76,12 +76,32 @@ main {
   margin: 0;
 }
 
+.flyer-link {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
 .flyer img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 24px #0002;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.flyer-link:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px #0003;
+}
+
+.flyer-link:focus-visible {
+  outline: 3px solid #20232b;
+  outline-offset: 5px;
 }
 
 
@@ -120,7 +140,7 @@ main {
 }
 
 
-/* MEDIA */
+/* SOCIAL MEDIA */
 
 .socials {
   text-align: center;
@@ -237,14 +257,22 @@ main {
 
     <div class="group-session">
 
-      <h2 class="section-title">Group Session Sign Up</h2>
+      <h2 class="section-title">Group Session</h2>
 
       <figure class="flyer">
 
-        <img
-          src="oct10.jpg"
-          alt="EHVB volleyball group session October 10th, 1–3 PM at Order on the Court, CT 3."
+        <a
+          class="flyer-link"
+          href="group-session.html"
+          aria-label="Register for the EHVB group session"
         >
+
+          <img
+            src="oct10.jpg"
+            alt="EHVB volleyball group session October 10th, 1–3 PM at Order on the Court, CT 3."
+          >
+
+        </a>
 
       </figure>
 
@@ -279,7 +307,7 @@ main {
     <div class="socials">
 
       <h2 class="section-title">
-        Media Accounts
+        Media for Highlights and Learning
       </h2>
 
       <div class="social-icons">
@@ -294,23 +322,9 @@ main {
           rel="noopener noreferrer"
         >
 
-          <svg
-            role="img"
-            aria-label="YouTube"
-            viewBox="0 0 48 48"
-          >
-            <rect
-              x="2"
-              y="9"
-              width="44"
-              height="30"
-              rx="9"
-              fill="#ff0000"
-            />
-            <path
-              d="M20 17 L33 24 L20 31Z"
-              fill="white"
-            />
+          <svg role="img" aria-label="YouTube" viewBox="0 0 48 48">
+            <rect x="2" y="9" width="44" height="30" rx="9" fill="#ff0000"/>
+            <path d="M20 17 L33 24 L20 31Z" fill="white"/>
           </svg>
 
           <span>YouTube</span>
@@ -327,32 +341,17 @@ main {
           rel="noopener noreferrer"
         >
 
-          <svg
-            role="img"
-            aria-label="Instagram"
-            viewBox="0 0 48 48"
-          >
+          <svg role="img" aria-label="Instagram" viewBox="0 0 48 48">
 
             <defs>
-              <linearGradient
-                id="instagram"
-                x1="0"
-                y1="1"
-                x2="1"
-                y2="0"
-              >
+              <linearGradient id="instagram" x1="0" y1="1" x2="1" y2="0">
                 <stop stop-color="#ffcc55"/>
                 <stop offset=".45" stop-color="#ef285d"/>
                 <stop offset="1" stop-color="#7843d5"/>
               </linearGradient>
             </defs>
 
-            <rect
-              width="48"
-              height="48"
-              rx="13"
-              fill="url(#instagram)"
-            />
+            <rect width="48" height="48" rx="13" fill="url(#instagram)"/>
 
             <rect
               x="10"
@@ -374,12 +373,7 @@ main {
               stroke-width="3"
             />
 
-            <circle
-              cx="33"
-              cy="15"
-              r="2"
-              fill="white"
-            />
+            <circle cx="33" cy="15" r="2" fill="white"/>
 
           </svg>
 
@@ -397,18 +391,9 @@ main {
           rel="noopener noreferrer"
         >
 
-          <svg
-            role="img"
-            aria-label="TikTok"
-            viewBox="0 0 48 48"
-          >
+          <svg role="img" aria-label="TikTok" viewBox="0 0 48 48">
 
-            <rect
-              width="48"
-              height="48"
-              rx="12"
-              fill="#111"
-            />
+            <rect width="48" height="48" rx="12" fill="#111"/>
 
             <path
               d="M28 10v23a8 8 0 1 1-7-8v5a3 3 0 1 0 2 3V10h5c1 6 4 8 9 8v5c-4 0-7-1-9-3"
@@ -443,5 +428,4 @@ main {
 </main>
 
 </body>
-
 </html>
